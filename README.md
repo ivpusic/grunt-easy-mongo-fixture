@@ -99,26 +99,6 @@ Action to execute. Either `save` or `load`.
 
 ### Usage Examples
 
-#### Default Options
-In this example, the default options are used.
-
-```js
-grunt.initConfig({
-  easy_mongo_fixture: {
-    options: {
-      database: 'test',
-      port: 20000
-      dir: 'fixtures'
-    },
-    collections: ['products', 'categories'],
-      action: 'load'
-    }
-  }
-});
-```
-
-#### Custom Options
-In this example, custom options.
 
 ```js
   grunt.initConfig({
