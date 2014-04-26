@@ -19,7 +19,6 @@ module.exports = function (grunt) {
       options,
       mongoFixture;
 
-    // task validation
     if (!collections || !collections.length) {
       grunt.fail.fatal('No collections provided!');
     }
@@ -28,6 +27,15 @@ module.exports = function (grunt) {
     options = this.options({
       collections: collections
     });
+
+    if (!action) {
+      grunt.fail.fatal('No action provided!');
+    }
+
+    // task validation
+    if (!options.database) {
+      grunt.fail.fatal('No database provided!');
+    }
 
     // init mongoFixture
     mongoFixture = new MongoFixture(options);
