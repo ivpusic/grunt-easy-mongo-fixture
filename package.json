@@ -1,7 +1,7 @@
 {
   "name": "grunt-easy-mongo-fixture",
   "description": "Grunt task for easy-mongo-fixture plugin. It helps to you load and save you fixtures",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://github.com/ivpusic/grunt-easy-mongo-fixture",
   "author": {
     "name": "Ivan Pusic",
