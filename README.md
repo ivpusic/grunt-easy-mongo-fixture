@@ -18,6 +18,18 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-easy-mongo-fixture');
 ```
 
+# use case
+
+Let we say that you have database with state which is pretty good to be fixture data. In that case you would like to 'freeze' database state and save it to file, and you want to be able to reset database state on that state each time when you want. `easy-mongo-fixture` will help you with that. 
+
+I am using something like this in my project:
+```
+  grunt.registerTask('fixtures:load', ['easy_mongo_fixture:load', 'easy_postgresql_fixture:load']);
+  grunt.registerTask('fixtures:save', ['easy_mongo_fixture:save', 'easy_postgresql_fixture:save']);
+```
+
+So each time when I want reset databases state to some previous one I just need to run `grunt fixtures:load`, and if current database state is appropriate to be fixture seed, I can save current state with ``grunt fixtures:save`` command. After this command fixture files will be generated for you. Of course you can update generated fixture files by hand, and then run `grunt fixtures:load` command to populate data with newly added fixture records. Enjoy :)
+
 ## The "easy_mongo_fixture" task
 
 ### Overview
